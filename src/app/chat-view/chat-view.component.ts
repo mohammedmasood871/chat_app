@@ -11,10 +11,12 @@ export class ChatViewComponent implements OnInit {
   @Input() user: any
   userdetail: any
   newMessage!: string;
-  messageList: any[] = [];
+  messageList: any[] ;
   userId: any = ''
 
-  constructor(private apiservice: ApiServiceService, private chatService: WebsocketService,) { }
+  constructor(private apiservice: ApiServiceService, private chatService: WebsocketService,) { 
+    this.messageList = []
+  }
 
   ngOnInit(): void {
     const sessionId = localStorage.getItem("sessionId")
@@ -32,7 +34,7 @@ export class ChatViewComponent implements OnInit {
       .getMessages()
       .subscribe((message: any) => {
 
-        this.messageList.push(message.message)
+        this.messageList?.push(message?.message)
 
 
 
@@ -64,7 +66,7 @@ export class ChatViewComponent implements OnInit {
 
   getChatData() {
     this.apiservice.chatGetData(this.userId, this.user).subscribe((res: any) => {
-      this.messageList = res?.data?.chatArray;
+      this.messageList = res?.data?.chatArray ?? [];
       console.log(this.messageList);
 
     })
