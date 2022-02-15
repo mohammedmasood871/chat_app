@@ -68,7 +68,9 @@ app.use(function(req, res, next) {
       // Pass to next layer of middleware
     next(); })
 
- app.use(bodyparser())   
+ app.use(bodyparser()) 
+ app.use(bodyparser.urlencoded(  {extended: true}))
+ app.use(bodyparser.json());  
 
 
 
