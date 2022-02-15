@@ -1,0 +1,59 @@
+.body-container {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    width: calc(100% - 3rem)
+}
+.main-container {
+    box-sizing: border-box;
+}
+
+.card-title{
+    font-size: 24px;
+}
+.filters {
+    display: flex;
+    gap: 1.2rem
+}
+.app-info{
+    color: #938f8f;
+}
+.filter-container {
+    display: flex;
+
+}
+.mt{
+    margin-top: 50px;
+}
+
+.content{
+    padding: 1.5rem 2.5rem;
+
+}
+input{
+    border-radius: 20px;
+    width: 60%;
+    background: #e9ecef;
+}
+.btn{
+    background: linear-gradient(
+45deg, #f78170, #f66c96);
+    border: #f67781;
+}
+.mt{
+    margin-top: 22px;
+}
+.card-subtitle.mt {
+    margin-top: 23px;
+    margin-left: 27px;
+}
+.card-title {
+    margin-top: 23px;
+    margin-left: 27px;
+}
+
+span.material-icons {
+    color: white;
+    background-color: #f67c78;
+}

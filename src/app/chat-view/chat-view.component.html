@@ -1,0 +1,18 @@
+<div class="chat-container">
+    <div class="chat-user-name">
+        <div class="name">{{userdetail.username | titlecase}}</div>
+        <div class="close">X</div>
+    </div>
+    <div class="chat-display-area" >
+        <ng-container *ngFor="let data of messageList">
+            <div class="sent" *ngIf="data.senderId == userId" >{{data.message}}</div>
+            <div class="received" *ngIf="data.senderId != userId" >{{data.message}}</div>
+        </ng-container>
+      
+
+    </div>
+    <div class="chat-input-area">
+        <input type="text" placeholder="Enter message to send" id="chat-box"  [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()" required>
+        <button (click)="sendMessage()">Send</button>
+    </div>
+</div>
